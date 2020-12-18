@@ -4,3 +4,10 @@ lib/
 
 # Folders created at documentation generation
 doc/build/
+*.user
+.vs/
+minimal/x64/
+sq/x64/
+sqstdlib/x64/
+squirrel/x64/
+x64/

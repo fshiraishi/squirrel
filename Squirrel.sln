@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sq", "sq\Sq.vcxproj", "{B3EF2DAD-B2F2-468F-AC89-2376A587E291}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2} = {C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}
+		{9B86E0FE-0189-4298-984E-0C1B0346D003} = {9B86E0FE-0189-4298-984E-0C1B0346D003}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Squirrel", "squirrel\Squirrel.vcxproj", "{9B86E0FE-0189-4298-984E-0C1B0346D003}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SqStdLib", "SqStdLib\SqStdLib.vcxproj", "{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Minimal", "Minimal\Minimal.vcxproj", "{103927F8-37F4-428D-9D32-ABB065FD3448}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2} = {C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}
+		{9B86E0FE-0189-4298-984E-0C1B0346D003} = {9B86E0FE-0189-4298-984E-0C1B0346D003}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Debug|x64.ActiveCfg = Debug|x64
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Debug|x64.Build.0 = Debug|x64
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Debug|x86.ActiveCfg = Debug|Win32
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Debug|x86.Build.0 = Debug|Win32
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Release|x64.ActiveCfg = Release|x64
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Release|x64.Build.0 = Release|x64
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Release|x86.ActiveCfg = Release|Win32
+		{B3EF2DAD-B2F2-468F-AC89-2376A587E291}.Release|x86.Build.0 = Release|Win32
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Debug|x64.ActiveCfg = Debug|x64
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Debug|x64.Build.0 = Debug|x64
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Debug|x86.ActiveCfg = Debug|Win32
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Debug|x86.Build.0 = Debug|Win32
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Release|x64.ActiveCfg = Release|x64
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Release|x64.Build.0 = Release|x64
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Release|x86.ActiveCfg = Release|Win32
+		{9B86E0FE-0189-4298-984E-0C1B0346D003}.Release|x86.Build.0 = Release|Win32
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Debug|x64.ActiveCfg = Debug|x64
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Debug|x64.Build.0 = Debug|x64
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Debug|x86.ActiveCfg = Debug|Win32
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Debug|x86.Build.0 = Debug|Win32
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Release|x64.ActiveCfg = Release|x64
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Release|x64.Build.0 = Release|x64
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Release|x86.ActiveCfg = Release|Win32
+		{C21BBD71-DFFA-44DE-AFD2-EFC03750A0A2}.Release|x86.Build.0 = Release|Win32
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Debug|x64.ActiveCfg = Debug|x64
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Debug|x64.Build.0 = Debug|x64
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Debug|x86.ActiveCfg = Debug|Win32
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Debug|x86.Build.0 = Debug|Win32
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Release|x64.ActiveCfg = Release|x64
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Release|x64.Build.0 = Release|x64
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Release|x86.ActiveCfg = Release|Win32
+		{103927F8-37F4-428D-9D32-ABB065FD3448}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7525BDA-C1D2-4D02-9D13-8AA67EC14AA5}
+	EndGlobalSection
+EndGlobal
