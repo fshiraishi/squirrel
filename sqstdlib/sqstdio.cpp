@@ -10,7 +10,14 @@
 SQFILE sqstd_fopen(const SQChar *filename ,const SQChar *mode)
 {
 #ifndef SQUNICODE
-    return (SQFILE)fopen(filename,mode);
+	FILE *fileptr;
+	errno_t err = fopen_s(&fileptr, filename, mode);
+	if (0 == err) {
+		return (SQFILE)fileptr;
+	}
+	else {
+		return NULL;
+	}
 #else
     return (SQFILE)_wfopen(filename,mode);
 #endif

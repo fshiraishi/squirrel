@@ -13,7 +13,7 @@
 #define scremove _wremove
 #define screname _wrename
 #else
-#define scgetenv getenv
+#define scgetenv getenv_s
 #define scsystem system
 #define scasctime asctime
 #define scremove remove
@@ -28,7 +28,14 @@ static SQInteger _system_getenv(HSQUIRRELVM v)
 {
     const SQChar *s;
     if(SQ_SUCCEEDED(sq_getstring(v,2,&s))){
-        sq_pushstring(v,scgetenv(s),-1);
+		char* buf = nullptr;
+		size_t sz = 0;
+		if (_dupenv_s(&buf, &sz, s) == 0 && buf != nullptr)
+		{
+			printf("EnvVarName = %s\n", buf);
+			sq_pushstring(v, buf, -1);
+			free(buf);
+		}
         return 1;
     }
     return 0;
@@ -91,6 +98,7 @@ static void _set_integer_slot(HSQUIRRELVM v,const SQChar *name,SQInteger val)
 
 static SQInteger _system_date(HSQUIRRELVM v)
 {
+	struct tm newtime;
     time_t t;
     SQInteger it;
     SQInteger format = 'l';
@@ -104,11 +112,19 @@ static SQInteger _system_date(HSQUIRRELVM v)
     else {
         time(&t);
     }
-    tm *date;
-    if(format == 'u')
-        date = gmtime(&t);
-    else
-        date = localtime(&t);
+    tm *date = NULL;
+	if (format == 'u') {
+		errno_t err = gmtime_s( &newtime, &t);
+		if (0 == err) {
+			date = &newtime;
+		}
+	}
+	else {
+		errno_t err = localtime_s(&newtime, &t);
+		if (0 == err) {
+			date = &newtime;
+		}
+	}
     if(!date)
         return sq_throwerror(v,_SC("crt api failure"));
     sq_newtable(v);

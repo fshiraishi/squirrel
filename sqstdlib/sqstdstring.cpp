@@ -143,9 +143,9 @@ SQRESULT sqstd_format(HSQUIRRELVM v,SQInteger nformatstringidx,SQInteger *outlen
             allocated += addlen + sizeof(SQChar);
             dest = sq_getscratchpad(v,allocated);
             switch(valtype) {
-            case 's': i += scsprintf(&dest[i],allocated,fmt,ts); break;
-            case 'i': i += scsprintf(&dest[i],allocated,fmt,ti); break;
-            case 'f': i += scsprintf(&dest[i],allocated,fmt,tf); break;
+            case 's': i += scsprintf(&dest[i],allocated,allocated,fmt,ts); break;
+            case 'i': i += scsprintf(&dest[i],allocated, allocated, fmt,ti); break;
+            case 'f': i += scsprintf(&dest[i],allocated, allocated, fmt,tf); break;
             };
             nparam ++;
         }
@@ -341,7 +341,7 @@ static SQInteger _string_escape(HSQUIRRELVM v)
         }
         else {
 
-            dest += scsprintf(dest, destcharsize, escpat, c);
+            dest += scsprintf(dest, destcharsize, destcharsize, escpat, c);
             escaped++;
         }
     }

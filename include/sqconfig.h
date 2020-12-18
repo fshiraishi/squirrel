@@ -106,7 +106,7 @@ typedef char SQChar;
 #define _SC(a) a
 #define scstrcmp    strcmp
 #ifdef _MSC_VER
-#define scsprintf   _snprintf
+#define scsprintf   _snprintf_s
 #else
 #define scsprintf   snprintf
 #endif
